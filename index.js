@@ -58,9 +58,11 @@ _.extend(Renderer.prototype, rawRenderer.prototype, {
 	}
 	, link: function(href, title, text) {
 		var arr = [href]
-		if (text) {
-			arr.unshift(text)
-		}
+		if (title) {
+			arr.unshift(title)
+		} else {
+	      arr.unshift(text)
+	    }
 		return '[' + arr.join('|') + ']'
 	}
 	, list: function(body, ordered) {
